@@ -87,10 +87,10 @@ public class GeyserBungeeDownloader {
      * Attempt to restart the server
      */
     private static void restartServer() {
-        logger.warn("The server will be restarting in 10 seconds!");
+        logger.warn("Der Proxy wird in 2 Minuten neu starten! Dauer ca. 10 Sekunden!");
         for (ProxiedPlayer player : plugin.getProxy().getPlayers()) {
             player.sendMessage(new TextComponent(ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("Restart-Message-Players"))));
         }
-        plugin.getProxy().getScheduler().schedule(plugin, () -> plugin.getProxy().stop(), 10L, TimeUnit.SECONDS);
+        plugin.getProxy().getScheduler().schedule(plugin, () -> plugin.getProxy().stop(), 120L, TimeUnit.SECONDS);
     }
 }
